@@ -1,7 +1,7 @@
 # Учебный проект «Код и Магия» [![Build status][travis-image]][travis-url]
 
 * Студент: [Дарья Солдатова](https://up.htmlacademy.ru/javascript/19/user/1873).
-* Наставник: `Неизвестно`.
+* Наставник: [Саша Мельничук].
 
 ---
 
