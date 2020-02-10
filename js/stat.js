@@ -45,23 +45,23 @@ window.renderStatistics = function (ctx, names, times) {
   // рисуем прямоугольное поле диаграммы.
   // высота прямоугольного поля диаграммы в переменной DIAGRAM_HEIGHT
 
-  ctx.fillStyle = '#000';
+  ctx.fillStyle = '#fff';
   ctx.fillRect(CLOUD_X + 2 * GAP, CLOUD_Y + 2 * GAP + 2 * FONT_GAP, CLOUD_WIDTH - 4 * GAP - 2 * FONT_GAP, DIAGRAM_HEIGHT);
 
   // рисуем столбик "Вы"
 
   ctx.fillText('Вы', CLOUD_X + 2 * GAP, DIAGRAM_HEIGHT - GAP);
   ctx.fillStyle = 'rgba(255, 0, 0, 1)';
-  ctx.fillRect(CLOUD_X + 2 * GAP, DIAGRAM_HEIGHT - GAP - FONT_GAP, BAR_WIDTH, BAR_HEIGHT * MathRound(times[0]/1000);
-  ctx.fillText(times[0], CLOUD_X + 2 * GAP, BAR_HEIGHT * MathRound(times[0]/1000) + GAP);
+  ctx.fillRect(CLOUD_X + 2 * GAP, DIAGRAM_HEIGHT - GAP - FONT_GAP, BAR_WIDTH, BAR_HEIGHT * parseInt(times[0]/1000));
+  ctx.fillText(times[0], CLOUD_X + 2 * GAP, BAR_HEIGHT * parseInt(times[0]/1000) + GAP);
 
   //рисуем столбики циклом
   // x y width height
 
   for (var i = 0; i < names.length; i++) {
     ctx.fillText(names[i], CLOUD_X + 2 * GAP + TEXT_WIDTH * i + GAP, DIAGRAM_HEIGHT - GAP);
-    ctx.fillStyle = 'rgb(0, 0, ' + 255 - 10 * i + ')';
-    ctx.fillRect(CLOUD_X + 2 * GAP + TEXT_WIDTH * i + GAP * i, DIAGRAM_HEIGHT - GAP - FONT_GAP - GAP, BAR_WIDTH, BAR_HEIGHT * MathRound(times[i]/1000);
-    ctx.fillText(times[i], CLOUD_X + 2 * GAP + TEXT_WIDTH * i + GAP, BAR_HEIGHT * MathRound(times[i]/1000));
+    ctx.fillStyle = 'rgb(0, 0, ' + 255 - 100 * i + ')';
+    ctx.fillRect(CLOUD_X + 2 * GAP + TEXT_WIDTH * i + GAP * i, DIAGRAM_HEIGHT - GAP - FONT_GAP - GAP, BAR_WIDTH, BAR_HEIGHT * parseInt(times[i]/1000));
+    ctx.fillText(times[i], CLOUD_X + 2 * GAP + TEXT_WIDTH * i + GAP, BAR_HEIGHT * parseInt(times[i]/1000));
   }
 };
